@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+tortoise-orm = "*"
+pydantic = "*"
+py-dateutil = "*"
+markdown = "*"
+pytz = "*"
+
+[dev-packages]
+uvicorn ="*"
+flake8 = "*"
+flake8-isort = "*"
+black = "== 20.8b1"
+pre-commit = "*"
+pytest = "*"
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+dev = "uvicorn app.main:app --reload"

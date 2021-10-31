@@ -1,5 +1,5 @@
 from app.orm_models.user import Users
-from app.pydantic_models.user import UserIn_Pydantic, User_Pydantic
+from app.pydantic_models.user import UserIn_Pydantic, User_Pydantic, Status
 from typing import List
 from fastapi import HTTPException, APIRouter, Depends, status
 from tortoise.contrib.fastapi import HTTPNotFoundError

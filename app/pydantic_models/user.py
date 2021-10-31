@@ -1,4 +1,5 @@
-from orm_models.user import Users
+from pydantic import BaseModel
+from app.orm_models.user import Users
 from tortoise.contrib.pydantic import pydantic_model_creator
 from tortoise.models import Model
 
@@ -9,3 +10,7 @@ UserIn_Pydantic = pydantic_model_creator(
 
 
 print(User_Pydantic.schema_json(indent=4))
+
+
+class Status(BaseModel):
+    message: str
