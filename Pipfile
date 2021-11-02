@@ -10,6 +10,7 @@ pydantic = "*"
 py-dateutil = "*"
 markdown = "*"
 pytz = "*"
+asyncpg = "*"
 
 [dev-packages]
 uvicorn ="*"

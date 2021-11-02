@@ -1,5 +1,4 @@
 from tortoise import Tortoise, fields, models, run_async
-from tortoise.contrib.pydantic import pydantic_model_creator
 from tortoise.models import Model
 
 

@@ -3,7 +3,7 @@ from tortoise import Tortoise
 from tortoise.contrib.fastapi import register_tortoise
 
 
-def get_db_uri(*, user, password, host, db):
+def get_db_uri(user, password, host, db):
     # In case you want to use postgres as database
     return f'postgres://{user}:{password}@{host}:5432/{db}'
 
@@ -11,7 +11,8 @@ def get_db_uri(*, user, password, host, db):
 def setup_database(app: FastAPI):
     register_tortoise(
         app,
-        db_url="sqlite://:memory:",
+        db_url=get_db_uri("postgres", "postgres",
+                          "localhost", "fastapitortoise"),
         modules={"models": ['app.orm_models']},
         generate_schemas=True,
         add_exception_handlers=True,

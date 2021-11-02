@@ -5,6 +5,7 @@ from fastapi.responses import JSONResponse
 
 from app.resources.database import setup_database
 from app.routers.user_router import router as UserRouter
+from app.routers.phone_router import router as PhoneRouter
 
 app = FastAPI(title="Tortoise + FastAPI")
 
@@ -21,4 +22,5 @@ async def unicorn_exception_handler(request: Request, exc: HTTPException):
         content={"message": exc.detail},
     )
 
-app.include_router(UserRouter, tags=["User"], prefix="/user")
+app.include_router(UserRouter, tags=["User"], prefix="/users")
+app.include_router(PhoneRouter, tags=["Phone"], prefix="/phones")

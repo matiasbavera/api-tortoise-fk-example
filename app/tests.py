@@ -6,7 +6,7 @@ from typing import Generator
 import pytest
 from fastapi.testclient import TestClient
 from main import app
-from models import Users
+from models import User
 
 from tortoise.contrib.test import finalizer, initializer
 
@@ -33,7 +33,7 @@ def test_create_user(client: TestClient, event_loop: asyncio.AbstractEventLoop):
     user_id = data["id"]
 
     async def get_user_by_db():
-        user = await Users.get(id=user_id)
+        user = await User.get(id=user_id)
         return user
 
     user_obj = event_loop.run_until_complete(get_user_by_db())

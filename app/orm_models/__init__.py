@@ -1,2 +1,2 @@
-from .user import Users
+from .user import User
 from .phone import Phone
