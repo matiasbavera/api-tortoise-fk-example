@@ -11,8 +11,7 @@ def get_db_uri(user, password, host, db):
 def setup_database(app: FastAPI):
     register_tortoise(
         app,
-        db_url=get_db_uri("postgres", "postgres",
-                          "localhost", "fastapitortoise"),
+        db_url=("sqlite://:memory:"),
         modules={"models": ['app.orm_models']},
         generate_schemas=True,
         add_exception_handlers=True,
